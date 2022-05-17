@@ -29,7 +29,15 @@ my_phone[:Chrome] = 'Invades your privacy..Thanks Google'
 p my_phone
 
 # - As a developer, I can delete two key:value pairs from my_phone.
+my_phone.delete :Chrome
+my_phone.delete :Maps
+
+p my_phone
+
 # - As a developer, I can use an enumerable method to return information about all of my_phone's applications.
+my_phone.each do |key, value|
+  p "The app #{key}'s description is: #{value}."
+end
 
 # ### Stretch Challenges
 # - As a developer, I can create a custom method that takes in my_phone and returns an array with the app name capitalized and information about each phone app.
