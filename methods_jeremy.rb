@@ -52,6 +52,13 @@ is_palindrome('hello')
 #   - Password _must_ contain at least one of: !#$
 #   - User ID _cannot_ contain the following characters: !#$ or spaces
 #   - Password _cannot_ be the word "password".
+
+# ### User Stories: Stretch
+# - As a user, I can enter my user ID and password into the terminal after being prompted to find out if the they are acceptable.
+
+# ### User Stories: Super Stretch
+# - As a developer, my method ensures that the user's password _must_ contain at least one number.
+
 def check_password(user_id, password)
   if user_id == password
     p 'User ID and Password cannot be the same!'
@@ -82,18 +89,17 @@ def check_password(user_id, password)
   end
 end
 
+puts 'Please enter a user name: ==>'
+input_id = gets.chomp
+puts 'Please enter a password: ==>'
+input_pass = gets.chomp
+check_password(input_id, input_pass)
+
 # Tests//////////////////////////////
-check_password('jduncan!', '1jduncan!!')
-check_password('jduncan', 'password')
-check_password('jduncan', 'jduncan')
-check_password('jasdasad', 'ada')
-check_password('jduncan', 'password1234')
-check_password('jduncan', 'password!')
-check_password('jduncan', '#6asdAPSSPD')
-# ### User Stories: Stretch
-
-# - As a user, I can enter my user ID and password into the terminal after being prompted to find out if the they are acceptable.
-
-# ### User Stories: Super Stretch
-
-# - As a developer, my method ensures that the user's password _must_ contain at least one number.
+# check_password('jduncan!', '1jduncan!!')
+# check_password('jduncan', 'password')
+# check_password('jduncan', 'jduncan')
+# check_password('jasdasad', 'ada')
+# check_password('jduncan', 'password1234')
+# check_password('jduncan', 'password!')
+# check_password('jduncan', '#6asdAPSSPD')
