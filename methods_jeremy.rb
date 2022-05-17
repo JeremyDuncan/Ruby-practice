@@ -32,6 +32,15 @@ between_one_and_ten(7)
 between_one_and_ten(22)
 
 # - Create a method that takes in a string and determines if the string is a palindrome.
+def is_palindrome(string)
+  if string == string.reverse
+    p "#{string} is a palindrome"
+  else
+    p "#{string} is not a palindrome"
+  end
+end
+is_palindrome('racecar')
+is_palindrome('hello')
 
 # ## Challenge: Password Checker
 
