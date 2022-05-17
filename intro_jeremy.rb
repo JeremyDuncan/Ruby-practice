@@ -1,6 +1,6 @@
 ### Challenges
 
-### Arithmetic Challenges
+### Arithmetic Challenges =============================
 # Remember that floats are numbers with a decimal point whereas integers have no fractional part so in Ruby, 1 and 1.0 are different types of things with slightly different behaviors.
 # - Add, subtract, multiply and divide some numbers and floats.
 puts 2 + 5
@@ -19,7 +19,7 @@ p 10 % 2
 # - Divide 0 by 0.
 #==> 0/0 # uncaught exception
 
-### Variables Challenges
+### Variables Challenges ===========================
 # - Set a variable called my_favorite_number equal to your favorite number
 my_favorite_number = 7
 p my_favorite_number
@@ -41,13 +41,26 @@ p my_favorite_number - someones_favorite
 # - Change the value of my favorite number to be 26 times its current value
 p my_favorite_number * 26
 
-### Strings Challenges
+### Strings Challenges ============================
 # - Create a variable and return it in a sentence string interpolation
+my_name = 'Jeremy'
+p "#{my_name} is a hard worker."
+
 # - Create a variable that contains a string and test some of the Ruby string methods
+test_string = 'this is my test string.'
+p test_string
+
 #  - .upcase
+p test_string.upcase
+
 #  - .reverse
+p test_string.reverse
+
 #  - .include?
+p test_string.include?('test')
+
 # - .capitalize
+p test_string.capitalize
 
 ### Arrays Challenges
 # - Create an array that contains the name of at least five TV shows
