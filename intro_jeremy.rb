@@ -88,4 +88,3 @@ new_shows = []
 new_shows[0] = tv_shows[0]
 new_shows[1] = tv_shows[1]
 p new_shows
-s
