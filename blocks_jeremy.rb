@@ -69,12 +69,32 @@ def sort_odd(num_arr)
   p (num_arr.select { |number| number.odd? }).sort
 end
 
-numbers = [19, 19, 19, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+numbers = [19, 19, 19, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
+           16, 17, 18, 19, 20]
+
 sort_odd(numbers)
 
-# array.select { |number| number > 3 } # => [4, 5, 6]
-
 # - Create a method that takes in an array of strings and returns all the strings in reverse casing. All uppercased letters should be returned lowercased and all lowercased letters should be returned uppercased.
+def reverse_string(string_arr)
+  reversed_string = ''
+  string_arr.each do |string|
+    reverse = ''
+    string.each_char do |letter|
+      letter = if letter == letter.upcase
+                 letter.downcase
+               else
+                 letter.upcase
+               end
+      reverse += letter
+    end
+    reversed_string += reverse + ' '
+  end
+  reversed_string
+end
+# "ABCDEFG".each_char {|char| p char}
+strings = %w[Jeremy Casey Jason Rowan Jana apple banana]
+p reverse_string(strings)
+
 # - Create a method that takes in an array of words and returns all the words that start with a particular letter. Ex) Given the array ['Apple', 'Avocado', 'Banana', 'Mango'] and the letter 'a' the method should return ['Apple', 'Avocado']. With the same method, given the letter 'm' should return ['Mango'].
 
 # ### FIZZBUZZ
