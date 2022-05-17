@@ -108,3 +108,19 @@ p starts_with_letter(strings, 'j')
 
 # ### FIZZBUZZ
 # - Write a method that prints the numbers from 1 to 100. For multiples of three print Fizz instead of the number, for multiples of five print Buzz instead of the number, for numbers that are multiples of both three and five print FizzBuzz, for all other numbers print the number.
+def fizz_buzz
+  numbers = 1..100
+  numbers.each do |num|
+    if num % 3 == 0 && num % 5 == 0
+      p 'FizzBuzz'
+    elsif num % 5 == 0
+      p 'Buzz'
+    elsif num % 3 == 0
+      p 'Fizz'
+    else
+      p num
+    end
+  end
+end
+
+fizz_buzz
