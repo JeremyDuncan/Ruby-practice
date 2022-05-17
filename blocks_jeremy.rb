@@ -65,6 +65,15 @@ numbers = [10, 14, 11, 2, 3, 31, 12]
 get_smallest(numbers)
 
 # - Create a method that takes in an array of numbers and returns only the odd numbers sorted from least to greatest.
+def sort_odd(num_arr)
+  p (num_arr.select { |number| number.odd? }).sort
+end
+
+numbers = [19, 19, 19, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+sort_odd(numbers)
+
+# array.select { |number| number > 3 } # => [4, 5, 6]
+
 # - Create a method that takes in an array of strings and returns all the strings in reverse casing. All uppercased letters should be returned lowercased and all lowercased letters should be returned uppercased.
 # - Create a method that takes in an array of words and returns all the words that start with a particular letter. Ex) Given the array ['Apple', 'Avocado', 'Banana', 'Mango'] and the letter 'a' the method should return ['Apple', 'Avocado']. With the same method, given the letter 'm' should return ['Mango'].
 
