@@ -14,18 +14,32 @@ puts 12.4 / 22
 p 10 % 2
 
 # - Divide a number by 0.
-p 1/0 # uncaught exception
+#==> 1/0 # uncaught exception
 
 # - Divide 0 by 0.
-p 0/0 # uncaught exception
+#==> 0/0 # uncaught exception
 
 ### Variables Challenges
 # - Set a variable called my_favorite_number equal to your favorite number
+my_favorite_number = 7
+p my_favorite_number
+
 # - Calculate your favorite number divided by 2
+p my_favorite_number / 2
+
 # - Set another variable called someones_favorite equal to 13
+someones_favorite = 13
+p someones_favorite
+
 # - Change the value of someones_favorite to 7
+someones_favorite = 7
+p someones_favorite
+
 # - Subtract my_favorite_number from someones_favorite
+p my_favorite_number - someones_favorite
+
 # - Change the value of my favorite number to be 26 times its current value
+p my_favorite_number * 26
 
 ### Strings Challenges
 # - Create a variable and return it in a sentence string interpolation
