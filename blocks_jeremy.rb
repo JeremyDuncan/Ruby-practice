@@ -25,6 +25,12 @@ num_range.each do |value|
 end
 
 # - Create a method that takes in an array of numbers and returns a new array with all the numbers multiplied by 5.
+def multiply_by_5(arr)
+  arr.each { |value| p value * 5 }
+end
+
+multiply_by_5([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+
 # - Create a method that takes in an array of lowercase words and capitalizes all of the words, permanently modifying the original array.
 # - Create a method that takes in an array of numbers and returns the largest number in the array.
 # - Create a method that takes in an array of numbers and returns the smallest number in the array.
