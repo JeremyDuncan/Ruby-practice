@@ -64,9 +64,28 @@ p test_string.capitalize
 
 ### Arrays Challenges
 # - Create an array that contains the name of at least five TV shows
+tv_shows = ['Seinfeld', '30 Rock', 'Robot Chicken', 'Wanda Vision', 'The Office']
+puts tv_shows
+p tv_shows
+
 # - Find the length of the array
+p tv_shows.length
+
 # - Return the first item in the array
+p tv_shows.first
+
 # - Return the fourth item in the array
+p tv_shows[3]
+
 # - Permanently reverse the order of the array
+tv_shows = tv_shows.reverse
+p tv_shows
+
 # - Create a new empty array for your top favorite TV shows
+new_shows = []
+
 # - From the full TV show array, add your top two favorite shows to the empty array
+new_shows[0] = tv_shows[0]
+new_shows[1] = tv_shows[1]
+p new_shows
+s
