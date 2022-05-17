@@ -91,11 +91,20 @@ def reverse_string(string_arr)
   end
   reversed_string
 end
-# "ABCDEFG".each_char {|char| p char}
+
 strings = %w[Jeremy Casey Jason Rowan Jana apple banana]
 p reverse_string(strings)
 
 # - Create a method that takes in an array of words and returns all the words that start with a particular letter. Ex) Given the array ['Apple', 'Avocado', 'Banana', 'Mango'] and the letter 'a' the method should return ['Apple', 'Avocado']. With the same method, given the letter 'm' should return ['Mango'].
+def starts_with_letter(words, char)
+  selected = []
+  words.each do |word|
+    selected << word if word[0].upcase == char.upcase
+  end
+  selected
+end
+
+p starts_with_letter(strings, 'j')
 
 # ### FIZZBUZZ
 # - Write a method that prints the numbers from 1 to 100. For multiples of three print Fizz instead of the number, for multiples of five print Buzz instead of the number, for numbers that are multiples of both three and five print FizzBuzz, for all other numbers print the number.
