@@ -41,3 +41,14 @@ end
 
 # ### Stretch Challenges
 # - As a developer, I can create a custom method that takes in my_phone and returns an array with the app name capitalized and information about each phone app.
+
+def convert_to_array(hash)
+  output = []
+  hash.each do |key, value|
+    output << "#{key}: #{value}"
+  end
+  output
+end
+
+my_phone_array = convert_to_array(my_phone)
+p my_phone_array
