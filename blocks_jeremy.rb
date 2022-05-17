@@ -53,6 +53,17 @@ numbers = [10, 14, 11, 2, 3, 31, 12]
 get_largest(numbers)
 
 # - Create a method that takes in an array of numbers and returns the smallest number in the array.
+def get_smallest(num_arr)
+  smallest = num_arr[0]
+  num_arr.each do |number|
+    smallest = number if number < smallest
+  end
+  p "#{smallest} is the smallest number."
+end
+
+numbers = [10, 14, 11, 2, 3, 31, 12]
+get_smallest(numbers)
+
 # - Create a method that takes in an array of numbers and returns only the odd numbers sorted from least to greatest.
 # - Create a method that takes in an array of strings and returns all the strings in reverse casing. All uppercased letters should be returned lowercased and all lowercased letters should be returned uppercased.
 # - Create a method that takes in an array of words and returns all the words that start with a particular letter. Ex) Given the array ['Apple', 'Avocado', 'Banana', 'Mango'] and the letter 'a' the method should return ['Apple', 'Avocado']. With the same method, given the letter 'm' should return ['Mango'].
