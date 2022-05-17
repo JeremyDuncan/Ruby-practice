@@ -12,7 +12,9 @@ my_phone[:"Candy Crush"] = 'A sugary treat of a game'
 my_phone[:Chrome] = 'A dependable web browswer'
 
 puts my_phone
+
 # - As a developer, I can return a value from my_phone by passing in the name of a key.
+p my_phone[:Wordle]
 
 # - As a developer, I can update two keys in my_phone.
 # - As a developer, I can update two values in my_phone.
