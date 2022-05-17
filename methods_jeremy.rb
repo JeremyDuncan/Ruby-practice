@@ -20,6 +20,17 @@ p is_even(10) # true
 p is_even(7)  # false
 
 # - Create a method that takes a number as an argument and prints "Valid" if the number is between 1 and 10 (inclusive) and "Invalid" otherwise.
+def between_one_and_ten(num)
+  if num >= 1 && num <= 10
+    puts 'Valid'
+  else
+    puts 'Invalid'
+  end
+end
+
+between_one_and_ten(7)
+between_one_and_ten(22)
+
 # - Create a method that takes in a string and determines if the string is a palindrome.
 
 # ## Challenge: Password Checker
