@@ -32,6 +32,14 @@ end
 multiply_by_5([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 # - Create a method that takes in an array of lowercase words and capitalizes all of the words, permanently modifying the original array.
+def capitalize(string_arr)
+  string_arr.map { |string| p string.upcase }
+end
+
+words = %w[apple orange jeremy cheese]
+words = capitalize(words)
+p words
+
 # - Create a method that takes in an array of numbers and returns the largest number in the array.
 # - Create a method that takes in an array of numbers and returns the smallest number in the array.
 # - Create a method that takes in an array of numbers and returns only the odd numbers sorted from least to greatest.
