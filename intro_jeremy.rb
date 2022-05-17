@@ -14,8 +14,10 @@ puts 12.4 / 22
 p 10 % 2
 
 # - Divide a number by 0.
+p 1/0 # uncaught exception
 
 # - Divide 0 by 0.
+p 0/0 # uncaught exception
 
 ### Variables Challenges
 # - Set a variable called my_favorite_number equal to your favorite number
