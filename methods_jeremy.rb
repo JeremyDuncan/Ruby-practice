@@ -60,6 +60,9 @@ def check_password(user_id, password)
         password.length < 6
     p 'User ID and Password must be at least six characters!'
 
+  elsif password.count('0-9') < 1
+    puts 'Your password must contain at least one number.'
+
   elsif !(password.include?('!') ||
           password.include?('#') ||
           password.include?('$'))
@@ -80,7 +83,7 @@ def check_password(user_id, password)
 end
 
 # Tests//////////////////////////////
-check_password('jduncan!', 'jduncan!!')
+check_password('jduncan!', '1jduncan!!')
 check_password('jduncan', 'password')
 check_password('jduncan', 'jduncan')
 check_password('jasdasad', 'ada')
