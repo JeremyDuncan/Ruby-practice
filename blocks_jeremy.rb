@@ -1,6 +1,12 @@
 # ## Challenges
 
 # - Write a loop that prints the numbers 1 to 20.
+num = 1
+20.times do
+  p num
+  num += 1
+end
+
 # - Write a loop that prints the numbers 1 to 20 using a different approach than previously used.
 # - Write a loop that prints only even numbers from 20 to 0.
 # - Create a method that takes in an array of numbers and returns a new array with all the numbers multiplied by 5.
