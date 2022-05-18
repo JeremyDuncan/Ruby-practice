@@ -1,11 +1,30 @@
 # ### Challenges
-
 # #### For the following Task challenge, use initialize and getter methods in your class
-
 # - As a developer, I can create a class called Task.
-# - As a developer, I can create three instances (objects) of class Task. (e.g laundry = Task.new)
+class Task
+  def initialize(title)
+    @title = title
+  end
+
+  def get_title
+    @title
+  end
+end
+
 # - As a developer, I can initialize each instance of class Task with a title.
+monday = Task.new('do laundry')
+tuesday = Task.new('finish classwork')
+wednesday = Task.new('study more programing')
+thursday = Task.new('wash car')
+friday = Task.new('sleep')
+
 # - As a developer, I can see the title of each instance of class Task.
+p monday.get_title
+p tuesday.get_title
+p wednesday.get_title
+p thursday.get_title
+p friday.get_title
+
 # - As a developer, I can initialize each instance of class Task with a status that has a default value of 'incomplete'.
 # - As a developer, I can update the status of each instance of class Task when the task has been completed.
 
