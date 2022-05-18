@@ -40,6 +40,7 @@ p friday.get_status
 friday.set_status('Finished')
 p friday.get_status
 
+#========================================================================================
 # #### For the following ColorPalette challenge use initialize and `attr_accessor` methods in your class
 # - As a developer, I can create a class called ColorPalette.
 class ColorPalette
@@ -75,29 +76,125 @@ p green.all_colors
 green.color1 = 'Light Green'
 p green.color1
 
-# #### Animal Kingdom
+# #### Animal Kingdom ============================================
 # - As a developer, I can make an Animal (generic Animal class).
 # - As a developer, upon initialization, I can give my Animal a status of `alive`, which will be set to true.
 # - As a developer, I can give my Animal an `age` of 0 upon creation.
 # - As a developer, I can age my Animal up one year at a time.
+class Animal
+  attr_accessor :age, :alive
+
+  def initialize
+    @alive = true
+    @age = 0
+  end
+
+  def grow_older
+    @age += 1
+  end
+end
+
+cat = Animal.new
+
 # - As a developer, I can return my Animal's `age`, as well as if they're `alive`.
 #   - **Hint**: Use `attr_accessor` as well as an `initialize` method.
+cat.grow_older
+cat.grow_older
+p cat.age
+
 # - As a developer, I can create a Fish that inherits from Animal.
 # - As a developer, I can initialize all of my fish to be `cold_blooded`. (Yes, there is _one_ fish who is technically fully warm-blooded but we aren't going to talk about that.)
+class Fish < Animal
+  attr_accessor :cold_blooded
+
+  def initialize
+    super()
+    @cold_blooded = true
+  end
+end
+
 # - As a developer, I can create a Salmon that inherits from Fish.
 # - As a developer, I can initialize my Salmon to be a specific species (Atlantic, Sockeye, etc).
-# - As a developer, I can see that my Salmon is cold-blooded.
-# - As a developer, I can age my Salmon up.
-# - As a developer, I can see a message that tells me all of my Salmon's information.
 # - As a developer, if my Salmon reaches the ripe old age of 4, I can make it die peacefully after a full and happy life.
 #   - **Hint**: You will need a method that changes the status of `alive` in the initialize method of Animal.
+class Salmon < Fish
+  attr_accessor :species
+
+  def initialize
+    super()
+    @species = 'Sockeye'
+  end
+
+  def get_info
+    "Species: #{@species} \nAge: #{@age} \nAlive: #{@alive} \nCold-Blooded: #{@cold_blooded}"
+  end
+
+  def grow_older
+    @age += 1
+    @alive = false if @age > 3
+  end
+end
+
+# - As a developer, I can see that my Salmon is cold-blooded.
+bob = Salmon.new
+p bob.cold_blooded
+
+# - As a developer, I can age my Salmon up.
+bob.grow_older
+bob.grow_older
+bob.grow_older
+bob.grow_older
+
+p bob.age
+
+# - As a developer, I can see a message that tells me all of my Salmon's information.
+puts bob.get_info
+
 # - As a developer, I can create a Mammal that inherits from Animal.
 # - As a developer, I can initialize all of my Mammals to be `warm_blooded`.
+class Mammal < Animal
+  attr_accessor :cold_blooded
+
+  def initialize
+    super()
+    @cold_blooded = false
+  end
+
+  def get_info
+    "Age: #{@age} \nAlive: #{@alive} \nCold-Blooded: #{@cold_blooded}"
+  end
+
+  def grow_older
+    @age += 5
+    if age > 19
+      @alive = false
+      p 'Died peacfully after a long happy life'
+    end
+  end
+end
+
 # - As a developer, I can create a Bear that inherits from Mammal.
-# - As a developer, I can age my Bear up.
-# - As a developer, I can see a message that tells me all of my Bear's information.
 # - As a developer, if my Bear turns 20 years old, I can make it die peacefully after a full and happy life.
 #   - **Hint**: You will need a method that changes the status of `alive` in the initialize method of Animal.
+class Bear < Mammal
+  attr_accessor
+
+  def initialize
+    super()
+  end
+end
+
+yogi = Bear.new
+
+# - As a developer, I can age my Bear up.
+yogi.grow_older
+yogi.grow_older
+yogi.grow_older
+yogi.grow_older
+
+# - As a developer, I can see a message that tells me all of my Bear's information.
+p yogi.get_info
+
 # - As a developer, I can create a Mammal of my choice.
 # - As a developer, I can interact with the new Mammal via various methods.
 # - As a developer, I can see a message that tells me all of my new Mammal's information.
