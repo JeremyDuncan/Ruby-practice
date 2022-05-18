@@ -95,7 +95,7 @@ puts 'Please enter a password: ==>'
 input_pass = gets.chomp
 check_password(input_id, input_pass)
 
-# Tests//////////////////////////////
+# Tests/////////////////////////////////
 # check_password('jduncan!', '1jduncan!!')
 # check_password('jduncan', 'password')
 # check_password('jduncan', 'jduncan')
