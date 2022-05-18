@@ -239,27 +239,46 @@ yogi.grow_older
 yogi.grow_older
 
 # - As a developer, I can see a message that tells me all of my Bear's information.
-p yogi.get_info
+p yogi.give_name('Yogi Bear')
 
 # - As a developer, I can create a Mammal of my choice.
 # - As a developer, I can interact with the new Mammal via various methods.
 # - As a developer, I can see a message that tells me all of my new Mammal's information.
+bobcat = Mammal.new
+bobcat.give_name('Fred')
+bobcat.grow_older
+bobcat.grow_older
+bobcat.grow_older
+
 panda = Mammal.new
 puts panda.name
 panda.give_name('Alanso')
+panda.grow_older
 p panda.name
 panda.sleep
 panda.wake_up
-panda.eat
-panda.eat
-panda.eat
 panda.eat
 panda.eat
 puts panda.get_info
 
 # - **STRETCH:** As a developer, I can keep a collection of two of each Animal.
 #   - **Hint**:	You'll want to add your Animals into an array.
+zoo = []
+puts yogi.get_info
+puts panda.get_info
+zoo << yogi
+zoo << panda
+zoo << bobcat
+
+p 'UNORGANIZED'
+p zoo
+
+# p zoo
 # - **STRETCH:** As a developer, I can sort my collection of Animals based on age.
+organized_zoo = zoo.sort_by { |obj| obj.age }
+p 'ORGANIZED ZOO'
+p organized_zoo
+
 #   - **Hint**: Find out how the spaceship operator can help you with an array.
 # - **SUPER STRETCH:** As a developer, I can utilize a Ruby `module` to help DRY up my code. I can create a `swim` method inside of my `module` that will apply to Animals who can _swim_. This method should return "I can swim!"
 #   - **Hint**: Look into module `mix ins`. Since not all animals can swim, only certain Animals will have access to this module.
