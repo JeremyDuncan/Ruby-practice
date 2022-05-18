@@ -153,22 +153,60 @@ puts bob.get_info
 # - As a developer, I can create a Mammal that inherits from Animal.
 # - As a developer, I can initialize all of my Mammals to be `warm_blooded`.
 class Mammal < Animal
-  attr_accessor :cold_blooded
+  attr_accessor :cold_blooded, :name
 
-  def initialize
+  def initialize(name = 'creature')
     super()
+    @name = name
     @cold_blooded = false
+    @sleeping = false
+    @hungry = false
+    @calories = 0
+  end
+
+  def give_name(name)
+    @name = name
+    p "You named your pet #{@name}."
+  end
+
+  def sleep
+    @sleeping = true
+    p "#{@name} is sleeping"
+    @calories = 0
+  end
+
+  def wake_up
+    p "#{@name} is awake"
+    @sleeping = false
+    p "#{@name} is hungry, maybe he should eat."
+  end
+
+  def eat
+    @calories += 100
+    if @calories < 500
+      @hungry = true
+      p "#{@name} is hungry."
+    else
+      @hungry = false
+      p "#{@name} is full."
+    end
   end
 
   def get_info
-    "Age: #{@age} \nAlive: #{@alive} \nCold-Blooded: #{@cold_blooded}"
+    "Name: #{@name}
+    Age: #{@age}
+    Alive: #{@alive}
+    Cold-Blooded: #{@cold_blooded}
+    Hungry: #{@hungry}
+    Sleeping: #{@sleeping}
+    Calories Consumed: #{@calories}"
   end
 
   def grow_older
-    @age += 5
-    if age > 19
+    @age += 1
+    if age > 35
       @alive = false
-      p 'Died peacfully after a long happy life'
+      p ' @name Unfortunatly succombed to old age'
     end
   end
 end
@@ -181,6 +219,14 @@ class Bear < Mammal
 
   def initialize
     super()
+  end
+
+  def grow_older
+    @age += 5
+    if age > 19
+      @alive = false
+      p 'Died peacfully after a long happy life'
+    end
   end
 end
 
@@ -198,6 +244,19 @@ p yogi.get_info
 # - As a developer, I can create a Mammal of my choice.
 # - As a developer, I can interact with the new Mammal via various methods.
 # - As a developer, I can see a message that tells me all of my new Mammal's information.
+panda = Mammal.new
+puts panda.name
+panda.give_name('Alanso')
+p panda.name
+panda.sleep
+panda.wake_up
+panda.eat
+panda.eat
+panda.eat
+panda.eat
+panda.eat
+puts panda.get_info
+
 # - **STRETCH:** As a developer, I can keep a collection of two of each Animal.
 #   - **Hint**:	You'll want to add your Animals into an array.
 # - **STRETCH:** As a developer, I can sort my collection of Animals based on age.
