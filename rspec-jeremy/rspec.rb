@@ -6,6 +6,8 @@
 # Then implement the class/method, with comments, so that it passes the tests one at a time
 # User Stories
 # Story: As a developer, I can create a Task.
+class Task
+end
 
 # Story: As a developer, I can give a Task a title and retrieve it.
 
