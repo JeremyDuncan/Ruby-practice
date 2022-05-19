@@ -98,8 +98,13 @@ end
 # Stretch: Due Date
 # Story: As a developer, I can give a Task a due date. Hint: Use the built-in Ruby Date class.
 describe 'Due Date' do
-  it 'can create a date' do
+  it 'the class is imported' do
     expect { Date.new }.to_not raise_error
+  end
+
+  it 'can have a date created' do
+    date = Date.new(2022, 6, 19)
+    expect("#{date.mon}-#{date.mday}-#{date.year}").to eq '6-19-2022'
   end
 end
 
