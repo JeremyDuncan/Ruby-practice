@@ -8,13 +8,18 @@ require 'date'
 # User Stories
 # Story: As a developer, I can create a Task.
 class Task
-  attr_accessor :title, :description
+  attr_accessor :title, :description, :due_date
   attr_reader :progress
 
   def initialize
-    @title
-    @description
+    @title = 'no title added'
+    @description = 'no description added'
     @progress = 'in progress'
+    @due_date = 'no due date'
+  end
+
+  def deadline(date)
+    @due_date = "#{date.mon}-#{date.mday}-#{date.year}"
   end
 
   def mark_done
