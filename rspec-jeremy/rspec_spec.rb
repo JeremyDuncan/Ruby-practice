@@ -75,7 +75,25 @@ describe 'TaskList' do
   end
 
   # Story: As a developer with a TaskList, I can print the incomplete items.
-
+  it 'can print incomplete items' do
+    list = TaskList.new
+    task1 = Task.new
+    task2 = Task.new
+    task3 = Task.new
+    task4 = Task.new
+    task1.mark_done
+    task1.title = 'Finish this Challenge'
+    task3.title = 'Have this interview'
+    task4.title = 'Get a career in coding'
+    task2.mark_done
+    task2.title = 'Fix this Code!'
+    list.to_do << task1
+    list.to_do << task2
+    list.to_do << task3
+    list.to_do << task4
+    expect(list.to_do.length).to eq 4
+    expect(list.show_incomplete).to eq ['Have this interview', 'Get a career in coding']
+  end
   # Stretch: Due Date
   # Story: As a developer, I can give a Task a due date. Hint: Use the built-in Ruby Date class.
 

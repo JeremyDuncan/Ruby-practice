@@ -38,6 +38,17 @@ class TaskList
     end
     output
   end
+
+  def show_incomplete
+    completed = nil
+    output = []
+
+    completed = @to_do.select { |i| i.progress == 'in progress' }
+    completed.each do |_key|
+      output << _key.title
+    end
+    output
+  end
 end
 
 # Story: As a developer, I can give a Task a title and retrieve it.
