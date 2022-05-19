@@ -94,12 +94,17 @@ describe 'TaskList' do
     expect(list.to_do.length).to eq 4
     expect(list.show_incomplete).to eq ['Have this interview', 'Get a career in coding']
   end
-  # Stretch: Due Date
-  # Story: As a developer, I can give a Task a due date. Hint: Use the built-in Ruby Date class.
-
-  # Story: As a developer with a TaskList, I can list all the not completed items that are due today.
-
-  # Story: As a developer with a TaskList, I can list all the not completed items in order of due date.
-
-  # Story: As a developer with a TaskList with and without due dates, I can list all the not completed items in order of due date, and then the items without due dates.
 end
+# Stretch: Due Date
+# Story: As a developer, I can give a Task a due date. Hint: Use the built-in Ruby Date class.
+describe 'Due Date' do
+  it 'can create a date' do
+    expect { Date.new }.to_not raise_error
+  end
+end
+
+# Story: As a developer with a TaskList, I can list all the not completed items that are due today.
+
+# Story: As a developer with a TaskList, I can list all the not completed items in order of due date.
+
+# Story: As a developer with a TaskList with and without due dates, I can list all the not completed items in order of due date, and then the items without due dates.
