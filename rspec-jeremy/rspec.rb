@@ -7,6 +7,8 @@ require 'date'
 # Then implement the class/method, with comments, so that it passes the tests one at a time
 # User Stories
 # Story: As a developer, I can create a Task.
+
+# Task class ===================================================================
 class Task
   attr_accessor :title, :description, :due_date
   attr_reader :progress
@@ -19,7 +21,7 @@ class Task
   end
 
   def deadline(date)
-    @due_date = "#{date.mon}-#{date.mday}-#{date.year}"
+    @due_date = date
   end
 
   def mark_done
@@ -27,11 +29,24 @@ class Task
   end
 end
 
+# TaskList class ===============================================================
 class TaskList
   attr_accessor :to_do
 
   def initialize
     @to_do = []
+  end
+
+  def due_today
+    due = nil
+    output = []
+    todays_date = Date.today.to_s
+
+    due = @to_do.select { |i| i.progress == 'in progress' && i.due_date.to_s == todays_date }
+    due.each do |_key|
+      output << _key.title.to_s
+    end
+    output
   end
 
   def show_complete
@@ -46,11 +61,11 @@ class TaskList
   end
 
   def show_incomplete
-    completed = nil
+    incomplete = nil
     output = []
 
-    completed = @to_do.select { |i| i.progress == 'in progress' }
-    completed.each do |_key|
+    incomplete = @to_do.select { |i| i.progress == 'in progress' }
+    incomplete.each do |_key|
       output << _key.title
     end
     output
