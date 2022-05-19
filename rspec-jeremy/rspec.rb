@@ -37,6 +37,18 @@ class TaskList
     @to_do = []
   end
 
+  def by_due_date
+    due = nil
+    output = []
+
+    sorted = @to_do.sort_by { |obj| obj.due_date }
+    due = sorted.select { |i| i.progress == 'in progress' }
+    due.each do |key|
+      output << key.title
+    end
+    output
+  end
+
   def due_today
     due = nil
     output = []
