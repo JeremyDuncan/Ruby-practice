@@ -12,9 +12,14 @@ describe Task do
   it 'There is a task' do
     expect { Task.new }.to_not raise_error
   end
+  # Story: As a developer, I can give a Task a title and retrieve it.
+  it 'it can have a title' do
+    new_task = Task.new
+    new_task.title = 'get some sleep'
+    expect(new_task.title).to be_a String
+    expect(new_task.title).to eq 'get some sleep'
+  end
 end
-
-# Story: As a developer, I can give a Task a title and retrieve it.
 
 # Story: As a developer, I can give a Task a description and retrieve it.
 
