@@ -111,12 +111,48 @@ describe 'Due Date' do
     date = Date.new(2022, 6, 19)
     task = Task.new
     task.deadline(date)
-    expect(task.due_date).to eq '6-19-2022'
+    expect(task.due_date.to_s).to eq '2022-06-19'
   end
+
+  # Story: As a developer with a TaskList, I can list all the not completed items that are due today.
+  it 'Tasklist can list all the not completed items that are due today' do
+    # creates tasks and task list
+    list = TaskList.new
+    task1 = Task.new
+    task2 = Task.new
+    task3 = Task.new
+    task4 = Task.new
+
+    # marks as complete
+    task1.mark_done
+    task2.mark_done
+
+    # sets the title of task
+    task1.title = 'Finish this Challenge'
+    task2.title = 'Have this interview'
+    task3.title = 'Get a career in coding'
+    task4.title = 'Fix this Code!'
+
+    # sets due dates for tasks
+    date1 = Date.new(2022, 5, 19)
+    task1.deadline(date1)
+    date2 = Date.new(2022, 8, 20)
+    task2.deadline(date2)
+    date3 = Date.new(2022, 5, 19)
+    task3.deadline(date3)
+    date4 = Date.new(2022, 5, 19)
+    task4.deadline(date4)
+
+    # puts tasks into tasklist
+    list.to_do << task1
+    list.to_do << task2
+    list.to_do << task3
+    list.to_do << task4
+
+    expect(task2.title).to eq 'Have this interview'
+    expect(list.due_today).to eq ['Get a career in coding', 'Fix this Code!']
+  end
+  # Story: As a developer with a TaskList, I can list all the not completed items in order of due date.
+
+  # Story: As a developer with a TaskList with and without due dates, I can list all the not completed items in order of due date, and then the items without due dates.
 end
-
-# Story: As a developer with a TaskList, I can list all the not completed items that are due today.
-
-# Story: As a developer with a TaskList, I can list all the not completed items in order of due date.
-
-# Story: As a developer with a TaskList with and without due dates, I can list all the not completed items in order of due date, and then the items without due dates.
