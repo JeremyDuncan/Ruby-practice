@@ -1,3 +1,5 @@
+require 'rspec'
+require_relative 'rspec'
 # Challenge: Tasklist with TDD
 # For each story:
 # Copy the story into your RSpec file as a comment
@@ -6,6 +8,11 @@
 # Then implement the class/method, with comments, so that it passes the tests one at a time
 # User Stories
 # Story: As a developer, I can create a Task.
+describe Task do
+  it 'There is a task' do
+    expect { Task.new }.to_not raise_error
+  end
+end
 
 # Story: As a developer, I can give a Task a title and retrieve it.
 
