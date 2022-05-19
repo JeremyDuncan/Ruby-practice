@@ -153,6 +153,41 @@ describe 'Due Date' do
     expect(list.due_today).to eq ['Get a career in coding', 'Fix this Code!']
   end
   # Story: As a developer with a TaskList, I can list all the not completed items in order of due date.
+  it 'Tasklist can organize list of tasks by due date' do
+    # creates tasks and task list
+    list = TaskList.new
+    task1 = Task.new
+    task2 = Task.new
+    task3 = Task.new
+    task4 = Task.new
+
+    # marks as complete
+    task1.mark_done
+
+    # sets the title of task
+    task1.title = 'Finish this Challenge'
+    task2.title = 'Have this interview'
+    task3.title = 'Get a career in coding'
+    task4.title = 'Fix this Code!'
+
+    # sets due dates for tasks
+    date1 = Date.new(2022, 5, 19)
+    task1.deadline(date1)
+    date2 = Date.new(2022, 8, 20)
+    task2.deadline(date2)
+    date3 = Date.new(2024, 5, 19)
+    task3.deadline(date3)
+    date4 = Date.new(2023, 5, 19)
+    task4.deadline(date4)
+
+    # puts tasks into tasklist
+    list.to_do << task1
+    list.to_do << task2
+    list.to_do << task3
+    list.to_do << task4
+
+    expect(list.by_due_date).to eq ['Have this interview', 'Fix this Code!', 'Get a career in coding']
+  end
 
   # Story: As a developer with a TaskList with and without due dates, I can list all the not completed items in order of due date, and then the items without due dates.
 end
