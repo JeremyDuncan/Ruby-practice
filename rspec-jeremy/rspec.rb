@@ -7,6 +7,11 @@
 # User Stories
 # Story: As a developer, I can create a Task.
 class Task
+  attr_accessor :title
+
+  def initialize
+    @title
+  end
 end
 
 # Story: As a developer, I can give a Task a title and retrieve it.
