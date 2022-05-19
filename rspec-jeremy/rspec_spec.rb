@@ -62,20 +62,17 @@ describe 'TaskList' do
     list = TaskList.new
     task1 = Task.new
     task2 = Task.new
+    task3 = Task.new
+    task4 = Task.new
     task1.mark_done
     task1.title = 'Finish this Challenge'
+    task2.mark_done
+    task2.title = 'Fix this Code!'
     list.to_do << task1
     list.to_do << task2
     expect(list.to_do.length).to eq 2
-    expect(list.show_complete).to eq 'Finish this Challenge'
+    expect(list.show_complete).to eq ['Finish this Challenge', 'Fix this Code!']
   end
-
-  # it 'it can be added to a task list"' do
-  #   new_task = Task.new
-  #    << new_task
-  #   expect(new_task.progress).to be_a String
-  #   expect(new_task.progress).to eq 'complete'
-  # end
 
   # Story: As a developer with a TaskList, I can print the incomplete items.
 

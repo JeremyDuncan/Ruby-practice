@@ -29,12 +29,12 @@ class TaskList
   end
 
   def show_complete
-    completed = ''
-    output = ''
+    completed = nil
+    output = []
 
     completed = @to_do.select { |i| i.progress == 'complete' }
     completed.each do |_key|
-      output = _key.title.to_s
+      output << _key.title
     end
     output
   end
