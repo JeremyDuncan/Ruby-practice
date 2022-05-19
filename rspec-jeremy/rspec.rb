@@ -7,10 +7,25 @@
 # User Stories
 # Story: As a developer, I can create a Task.
 class Task
-  attr_accessor :title
+  attr_accessor :title, :description
+  attr_reader :progress
 
   def initialize
     @title
+    @description
+    @progress = 'in progress'
+  end
+
+  def mark_done
+    @progress = 'complete'
+  end
+end
+
+class TaskList
+  attr_accessor :to_do
+
+  def initialize
+    @to_do = []
   end
 end
 
