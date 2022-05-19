@@ -106,6 +106,13 @@ describe 'Due Date' do
     date = Date.new(2022, 6, 19)
     expect("#{date.mon}-#{date.mday}-#{date.year}").to eq '6-19-2022'
   end
+
+  it 'can add a date to Task' do
+    date = Date.new(2022, 6, 19)
+    task = Task.new
+    task.deadline(date)
+    expect(task.due_date).to eq '6-19-2022'
+  end
 end
 
 # Story: As a developer with a TaskList, I can list all the not completed items that are due today.
