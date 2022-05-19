@@ -56,24 +56,35 @@ describe 'TaskList' do
     expect(list.to_do).to be_an Array
     expect(list.to_do.length).to eq 1
   end
+
+  # Story: As a developer with a TaskList, I can print the completed items.
+  it 'can print completed items' do
+    list = TaskList.new
+    task1 = Task.new
+    task2 = Task.new
+    task1.mark_done
+    task1.title = 'Finish this Challenge'
+    list.to_do << task1
+    list.to_do << task2
+    expect(list.to_do.length).to eq 2
+    expect(list.show_complete).to eq 'Finish this Challenge'
+  end
+
+  # it 'it can be added to a task list"' do
+  #   new_task = Task.new
+  #    << new_task
+  #   expect(new_task.progress).to be_a String
+  #   expect(new_task.progress).to eq 'complete'
+  # end
+
+  # Story: As a developer with a TaskList, I can print the incomplete items.
+
+  # Stretch: Due Date
+  # Story: As a developer, I can give a Task a due date. Hint: Use the built-in Ruby Date class.
+
+  # Story: As a developer with a TaskList, I can list all the not completed items that are due today.
+
+  # Story: As a developer with a TaskList, I can list all the not completed items in order of due date.
+
+  # Story: As a developer with a TaskList with and without due dates, I can list all the not completed items in order of due date, and then the items without due dates.
 end
-
-# Story: As a developer with a TaskList, I can print the completed items.
-
-# it 'it can be added to a task list"' do
-#   new_task = Task.new
-#    << new_task
-#   expect(new_task.progress).to be_a String
-#   expect(new_task.progress).to eq 'complete'
-# end
-
-# Story: As a developer with a TaskList, I can print the incomplete items.
-
-# Stretch: Due Date
-# Story: As a developer, I can give a Task a due date. Hint: Use the built-in Ruby Date class.
-
-# Story: As a developer with a TaskList, I can list all the not completed items that are due today.
-
-# Story: As a developer with a TaskList, I can list all the not completed items in order of due date.
-
-# Story: As a developer with a TaskList with and without due dates, I can list all the not completed items in order of due date, and then the items without due dates.
